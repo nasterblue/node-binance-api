@@ -516,6 +516,11 @@ let api = function Binance( options = {} ) {
         return promiseRequest( 'v1/order', params, { base:dapi, type:'TRADE', method:'POST' } );
     };
     const promiseRequest = async ( url, data = {}, flags = {} ) => {
+        console.debug({
+            url,
+            data,
+            flags
+        });
         return new Promise( ( resolve, reject ) => {
             let query = '', headers = {
                 'User-Agent': userAgent,
